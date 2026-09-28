@@ -8,17 +8,7 @@ pipeline {
     stages {
         stage("build") {
             steps {
-                echo "---------- build started ----------"
-                sh "mvn clean package"   
-                echo "---------- build completed ----------"
-            }
-        }
-
-        stage("test") {
-            steps {
-                echo "---------- unit test started ----------"
-                sh "mvn test surefire-report:report"  
-                echo "---------- unit test completed ----------"
+                sh 'mvn clean deploy'
             }
         }
 
@@ -34,5 +24,4 @@ pipeline {
         }
     }
 }
-
 
