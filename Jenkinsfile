@@ -14,7 +14,7 @@ pipeline {
 
         stage('SonarQube analysis') {
             environment {
-                scannerHome = tool 'syed-sonarqube-scanner'
+                scannerHome = tool 'syed-sonarqube-scannertool'
             }
             steps {
                 withSonarQubeEnv('syed-sonarqube-server') {
